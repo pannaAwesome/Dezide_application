@@ -29,4 +29,4 @@ We are looking forward to hearing about your design choices and the reasoning be
 them!
 
 ## Solution
-The solution for the assignments can be found in the folders *Task_1* and *Task_2*, where a description of the given tasks are explaned in the README's in each folder.
+The solution for the assignments can be found in the folders *Task_1* and *Task_2*, where a description of the given tasks are explaned in the README's in each folder, and a .jar file can be used for running the programs.
