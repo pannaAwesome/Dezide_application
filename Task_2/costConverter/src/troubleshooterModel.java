@@ -1,13 +1,13 @@
-public class model {
+public class troubleshooterModel {
     String id;
     double localCost = -1;
     customCostList localCustomCosts = new customCostList();
 
-    public model(String idName) {
+    public troubleshooterModel(String idName) {
         id = idName;
     }
 
-    public model(String idName, double cost) {
+    public troubleshooterModel(String idName, double cost) {
         this(idName);
         setCost(cost);        
     }
@@ -28,7 +28,7 @@ public class model {
             return false;
         }
 
-        model otherModel = (model) obj;
+        troubleshooterModel otherModel = (troubleshooterModel) obj;
 
         if (this.id.equals(otherModel.id)) {
             return true;

@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class costConverter {
     public static void main(String[] args) throws Exception {
-        model model1234 = new model("model1234", 500);
+        troubleshooterModel model1234 = new troubleshooterModel("model1234", 500);
         model1234.localCustomCosts.addCustomCosts(Map.of("Risk", "high", "Inconvenience", "medium"));
         costConverter.availableModels.add(model1234);
 
@@ -21,19 +21,19 @@ public class costConverter {
         System.out.println(converter.calculateCost());
     }
 
-    public static List<model> availableModels = new ArrayList<model>();
+    public static List<troubleshooterModel> availableModels = new ArrayList<troubleshooterModel>();
     public static customerSystem customer;
 
     double time;
     double money;
     double timeFactor;
-    model currentModel;
+    troubleshooterModel currentModel;
     customCostList adjustedCustomCosts = null;
 
     public costConverter(String currTime, String currMoney, String modelIdName) {
         setTime(currTime);
         setMoney(currMoney);
-        setCurrentModel(new model(modelIdName));
+        setCurrentModel(new troubleshooterModel(modelIdName));
         setTimeFactor();
     }
 
@@ -68,7 +68,7 @@ public class costConverter {
         }
     }
 
-    private void setCurrentModel(model currModel) {
+    private void setCurrentModel(troubleshooterModel currModel) {
         if (availableModels.contains(currModel)) {
             int modelIndex = availableModels.indexOf(currModel);
             currentModel = availableModels.get(modelIndex);
