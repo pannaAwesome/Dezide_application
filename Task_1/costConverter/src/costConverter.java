@@ -3,7 +3,7 @@ import java.util.List;
 
 public class costConverter {
     public static void main(String[] args) throws Exception {
-        model model1234 = new model("model1234", 500);
+        troubleshooterModel model1234 = new troubleshooterModel("model1234", 500);
         costConverter.availableModels.add(model1234);
 
         costConverter converter = new costConverter(args[0], args[1], args[2]);
@@ -11,7 +11,7 @@ public class costConverter {
         System.out.println(converter.calculateCost());
     }
 
-    public static List<model> availableModels = new ArrayList<model>();
+    public static List<troubleshooterModel> availableModels = new ArrayList<troubleshooterModel>();
     public static double globalValueCost = 300;
 
     double time;
@@ -21,7 +21,7 @@ public class costConverter {
     public costConverter(String currTime, String currMoney, String modelIdName) {
         setTime(currTime);
         setMoney(currMoney);
-        setTimeFactor(new model(modelIdName));
+        setTimeFactor(new troubleshooterModel(modelIdName));
     }
 
     private void setTime(String currTime) {
@@ -41,10 +41,10 @@ public class costConverter {
         money = currMoneyNum;
     }
     
-    private void setTimeFactor(model currModel) {
+    private void setTimeFactor(troubleshooterModel currModel) {
         if (availableModels.contains(currModel)) {
             int modelIndex = availableModels.indexOf(currModel);
-            model localModel = availableModels.get(modelIndex);
+            troubleshooterModel localModel = availableModels.get(modelIndex);
 
             if (localModel.localCost == -1) {
                 timeFactor = globalValueCost;
